@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Fernandez Ridano | Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #37352f;
+      --gray-text: #787774;
+      --border-color: #e9e9e7;
+      --callout-bg: #f1f1ef;
+      --tag-bg: #e3e2e0;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.5;
+    }
+
+    /* Estructura principal imitando Notion */
+    .notion-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6vh 4vw 10vh;
+    }
+
+    .notion-cover {
+      width: 100%;
+      height: 28vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .notion-icon {
+      font-size: 78px;
+      margin-top: -55px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Tipografía */
+    h1 { font-size: 40px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+    h2 { font-size: 30px; font-weight: 600; margin-top: 2em; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+    h3 { font-size: 20px; font-weight: 600; margin-top: 1.5em; margin-bottom: 8px; }
+    p { font-size: 16px; margin: 0 0 12px 0; color: var(--text-color); }
+    .text-gray { color: var(--gray-text); }
+
+    /* Bloques especiales */
+    .callout {
+      padding: 16px;
+      background-color: var(--callout-bg);
+      border-radius: 4px;
+      display: flex;
+      gap: 12px;
+      margin: 1.5em 0;
+    }
+    .callout-icon { font-size: 22px; }
+    
+    .notion-list { padding-left: 24px; margin: 0 0 12px 0; font-size: 16px;}
+    .notion-list li { padding-bottom: 6px; }
+
+    /* Grilla estilo Gallery de Notion para Proyectos */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 16px;
+      transition: background-color 0.2s ease;
+      box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover { background-color: var(--callout-bg); }
+    .card h4 { margin: 0 0 8px 0; font-size: 16px; font-weight: 600; }
+    .card p { font-size: 14px; color: var(--gray-text); margin-bottom: 12px; flex-grow: 1; }
+    
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background-color: var(--tag-bg);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: var(--text-color);
+    }
+
+    a { color: inherit; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 4px; }
+    a:hover { text-decoration-color: var(--text-color); }
+  </style>
+</head>
+<body>
+
+  <!-- Imagen de portada. Puedes reemplazar la URL por una imagen propia -->
+  <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1200&h=400" alt="Cover" class="notion-cover">
+  
+  <div class="notion-page">
+    <div class="notion-icon">🎧</div>
+    
+    <h1>Pedro Fernandez Ridano</h1>
+    <p class="text-gray">Técnico en Electrónica de Audio | Consultor Acústico | Estudiante de Ingeniería de Sonido (UNTREF)</p>
+    
+    <div class="callout">
+      <div class="callout-icon">💡</div>
+      <div>
+        <p>Bienvenido a mi portfolio. Especializado en diagnóstico y diseño electroacústico, restauración de equipos de alta fidelidad vintage y simulaciones acústicas arquitectónicas.</p>
+      </div>
+    </div>
+
+    <h2>Sobre Mí</h2>
+    <p>Trabajo en la intersección de la acústica arquitectónica, la electrónica a nivel componente y el desarrollo de software. Mi experiencia abarca desde el modelado 3D y la simulación de recintos, hasta la investigación de nuevos materiales acústicos y la calibración precisa de hardware de audio.</p>
+    
+    <h2>Proyectos Destacados</h2>
+    <div class="gallery">
+      <div class="card">
+        <h4>Restauración Sansui AU-417</h4>
+        <p>Reparación a nivel componente de un amplificador vintage. Reemplazo de transistores empleando un SONY K97 en encapsulado DIP-6, recalibración de bias DC y ajuste preciso en el control de ganancia FET (R07).</p>
+        <div class="tags">
+          <span class="tag">Hardware</span>
+          <span class="tag">Electrónica Vintage</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h4>Análisis de Sistema AKAI SW7-II</h4>
+        <p>Diagnóstico avanzado de respuestas de frecuencia. A través de Smaart, se identificó una anomalía a 150Hz que correspondía a una rotación de fase acústica, descartando fallas de naturaleza eléctrica.</p>
+        <div class="tags">
+          <span class="tag">Smaart V.7</span>
+          <span class="tag">Diagnóstico</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Modelado Maison Symphonique</h4>
+        <p>Simulación académica de campo acústico en Montreal. Desarrollo del modelo utilizando EASE 4.3.8 y SketchUp para el análisis predictivo del comportamiento espacial del recinto.</p>
+        <div class="tags">
+          <span class="tag">EASE 4.3.8</span>
+          <span class="tag">SketchUp</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h4>Consultoría BBVA</h4>
+        <p>Diagnóstico acústico de espacios de oficina. Evaluación in-situ de ruido de piso y pérdida por inserción en divisiones para optimizar la privacidad y la inteligibilidad de la palabra (D50).</p>
+        <div class="tags">
+          <span class="tag">Consultoría</span>
+          <span class="tag">Acústica Arquitectónica</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Experiencia Profesional e Investigación</h2>
+    <ul class="notion-list">
+      <li><strong>Asesor Técnico</strong> en <em>New Concept Co.</em> - Comercialización y especificación técnica de paneles acústicos.</li>
+      <li><strong>Investigador Colaborador</strong> - Análisis de absorción acústica en paneles PET con cavidades de aire y desarrollo experimental de paneles absorbentes en base a micelio fúngico.</li>
+      <li><strong>Docente de Ciencias Exactas</strong> - Planificación y tutorías en plataformas educativas.</li>
+    </ul>
+
+    <h2>Herramientas y Software</h2>
+    <ul class="notion-list">
+      <li><strong>Acústica y Medición:</strong> Smaart V.7, VituixCAD, REW, Aurora, ARTA, EASE 4.3.8, SketchUp.</li>
+      <li><strong>Desarrollo y Programación:</strong> Python (NumPy, SciPy, python-acoustics) para DSP y automatización; LaTeX para reportes técnicos.</li>
+      <li><strong>Hardware y Electrónica:</strong> Uso avanzado de osciloscopios, multímetros, y soldadura aplicada al diagnóstico de placas.</li>
+    </ul>
+
+    <h2>Contacto</h2>
+    <p>Ubicación: Buenos Aires, Argentina</p>
+    <p>
+      <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/tu-usuario" target="_blank">GitHub</a> | 
+      <a href="mailto:tuemail@ejemplo.com">Correo Electrónico</a>
+    </p>
+  </div>
+
+  <script>
+    // Pequeño script para agregar interactividad a las tarjetas si lo necesitas a futuro
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        // Lógica para abrir detalles de proyectos (Ej. un modal o un link a otra vista)
+      });
+    });
+  </script>
+</body>
+</html>
