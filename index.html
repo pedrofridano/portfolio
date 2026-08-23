@@ -99,6 +99,61 @@
 
     a { color: inherit; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 4px; }
     a:hover { text-decoration-color: var(--text-color); }
+
+    /* Estilos para la sección de Experiencia (Lista con Logos) */
+    .experience-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      align-items: flex-start;
+    }
+    
+    .experience-logo {
+      flex-shrink: 0;
+      width: 56px; 
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    
+    .experience-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    
+    .experience-content {
+      flex-grow: 1;
+    }
+    
+    .experience-title {
+      font-size: 16px;
+      margin: 0 0 8px 0;
+    }
+    
+    .experience-date {
+      font-size: 14px;
+      color: var(--text-color);
+      margin: 0 0 16px 0;
+    }
+    
+    .experience-projects {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    
+    .tag-outline {
+      border: 1px solid var(--border-color);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
@@ -161,12 +216,72 @@
       </div>
     </div>
 
-    <h2>Experiencia Profesional e Investigación</h2>
-    <ul class="notion-list">
-      <li><strong>Asesor Técnico</strong> en <em>New Concept Co.</em> - Comercialización y especificación técnica de paneles acústicos.</li>
-      <li><strong>Investigador Colaborador</strong> - Análisis de absorción acústica en paneles PET con cavidades de aire y desarrollo experimental de paneles absorbentes en base a micelio fúngico.</li>
-      <li><strong>Docente de Ciencias Exactas</strong> - Planificación y tutorías en plataformas educativas.</li>
-    </ul>
+    <h2>Experiencia Profesional</h2>
+    
+    <!-- New Concept Co. -->
+    <div class="experience-item">
+      <div class="experience-logo">
+        <img src="logo-new-concept.png" alt="New Concept Co. Logo">
+      </div>
+      <div class="experience-content">
+        <p class="experience-title">Consultor acústico — <em>New Concept Co.</em></p>
+        <p class="experience-date">Septiembre 2025 – Presente</p>
+        <ul class="notion-list">
+          <li>Mediciones acústicas in situ y análisis de datos para la evaluación y acondicionamiento de espacios.</li>
+          <li>Asesoramiento técnico y comercial a clientes para la implementación de soluciones acústicas con paneles de PET.</li>
+        </ul>
+        <div class="experience-projects">
+          Proyectos: <span class="tag-outline">Gimnasio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yaeltex -->
+    <div class="experience-item">
+      <div class="experience-logo">
+        <img src="logo-yaeltex.png" alt="Yaeltex Logo">
+      </div>
+      <div class="experience-content">
+        <p class="experience-title"><strong>Técnico electrónico</strong> — Yaeltex Custom MIDI Controllers</p>
+        <p class="experience-date">Agosto 2024 – Enero 2025</p>
+        <ul class="notion-list">
+          <li>Armado de controladores MIDI, desde el montaje de los módulos en el frente de aluminio anodizado y en el gabinete de madera, al cableado de los mismos.</li>
+          <li>Armado de módulos del sistema Yaeltex, cada uno integrado por un set específico de botones, perillas, encoders, faders o joysticks que permiten al usuario la personalización de su controlador MIDI.</li>
+          <li>Organización de stock de dichos módulos.</li>
+          <li>Testeo de controladores MIDI durante su etapa inicial de producción.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Freelance Física y Matemática -->
+    <div class="experience-item">
+      <div class="experience-logo">
+        <img src="logo-matematica.png" alt="Matemática Logo">
+      </div>
+      <div class="experience-content">
+        <p class="experience-title"><strong>Profesor particular de Física y Matemática</strong> — Freelance</p>
+        <p class="experience-date">Agosto 2021 – Presente</p>
+        <ul class="notion-list">
+          <li>Organización de técnicas de estudio para nivel secundario y universitario.</li>
+          <li>Preparación de estudiantes para exámenes de ingreso a universidades.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- UNTREF -->
+    <div class="experience-item">
+      <div class="experience-logo">
+        <img src="logo-untref.png" alt="UNTREF Logo">
+      </div>
+      <div class="experience-content">
+        <p class="experience-title">Ayudante de Cátedra — UNTREF</p>
+        <p class="experience-date">Marzo 2024 – Diciembre 2025</p>
+        <ul class="notion-list">
+          <li>Profesor para las materias Laboratorio de Electrónica 1 e Introd. a la Acústica y Psicoacústica.</li>
+          <li>Organización y supervisión de trabajos prácticos.</li>
+        </ul>
+      </div>
+    </div>
 
     <h2>Herramientas y Software</h2>
     <ul class="notion-list">
@@ -185,10 +300,9 @@
   </div>
 
   <script>
-    // Pequeño script para agregar interactividad a las tarjetas si lo necesitas a futuro
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', () => {
-        // Lógica para abrir detalles de proyectos (Ej. un modal o un link a otra vista)
+        // Lógica para abrir detalles de proyectos
       });
     });
   </script>
