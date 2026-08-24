@@ -11,8 +11,17 @@
       --gray-text: #787774;
       --border-color: #e9e9e7;
       --callout-bg: #f1f1ef;
-      --tag-bg: #e3e2e0;
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+      
+      /* Colores de Tags de Notion */
+      --tag-gray-bg: #e3e2e0;
+      --tag-gray-text: #32323c;
+      --tag-pink-bg: #f5e0e1;
+      --tag-pink-text: #9a313a;
+      --tag-brown-bg: #e9e5e3;
+      --tag-brown-text: #603b2c;
+      --tag-green-bg: #ddedea;
+      --tag-green-text: #1c3829;
     }
 
     body {
@@ -48,7 +57,7 @@
     /* Tipografía */
     h1 { font-size: 40px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
     h2 { font-size: 30px; font-weight: 600; margin-top: 2em; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
-    h3 { font-size: 20px; font-weight: 600; margin-top: 1.5em; margin-bottom: 8px; }
+    h3 { font-size: 24px; font-weight: 600; margin-top: 1.5em; margin-bottom: 8px; }
     p { font-size: 16px; margin: 0 0 12px 0; color: var(--text-color); }
     .text-gray { color: var(--gray-text); }
 
@@ -72,30 +81,78 @@
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 16px;
       margin-top: 16px;
+      margin-bottom: 32px;
     }
 
     .card {
       border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 16px;
-      transition: background-color 0.2s ease;
+      border-radius: 6px;
+      padding: 0 16px 16px 16px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
       box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
+      background: white;
     }
 
-    .card:hover { background-color: var(--callout-bg); }
-    .card h4 { margin: 0 0 8px 0; font-size: 16px; font-weight: 600; }
-    .card p { font-size: 14px; color: var(--gray-text); margin-bottom: 12px; flex-grow: 1; }
-    
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      background-color: var(--tag-bg);
-      padding: 2px 8px;
-      border-radius: 3px;
-      font-size: 12px;
-      color: var(--text-color);
+    .card:hover { 
+      background-color: #fafafa;
+      transform: translateY(-2px);
     }
+    
+    /* Imagen de portada de la tarjeta */
+    .card-cover {
+      width: calc(100% + 32px);
+      margin-left: -16px;
+      margin-right: -16px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 12px;
+      background-color: var(--border-color);
+    }
+
+    .card-title { 
+      margin: 0 0 8px 0; 
+      font-size: 16px; 
+      font-weight: 600; 
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.4;
+    }
+    
+    .card-icon { font-size: 18px; line-height: 1.2; flex-shrink: 0; }
+
+    .card-desc { 
+      font-size: 14px; 
+      color: var(--text-color); 
+      margin-top: 12px; 
+      margin-bottom: 12px; 
+      flex-grow: 1; 
+    }
+    
+    .card-desc ul {
+      padding-left: 20px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    .card-desc li { padding-bottom: 4px; }
+    
+    /* Tags / Etiquetas */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px;}
+    .tag {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .tag.pink { background-color: var(--tag-pink-bg); color: var(--tag-pink-text); }
+    .tag.gray { background-color: var(--tag-gray-bg); color: var(--tag-gray-text); }
+    .tag.brown { background-color: var(--tag-brown-bg); color: var(--tag-brown-text); }
+    .tag.green { background-color: var(--tag-green-bg); color: var(--tag-green-text); }
 
     a { color: inherit; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 4px; }
     a:hover { text-decoration-color: var(--text-color); }
@@ -107,7 +164,6 @@
       margin-bottom: 32px;
       align-items: flex-start;
     }
-    
     .experience-logo {
       flex-shrink: 0;
       width: 56px; 
@@ -117,48 +173,74 @@
       justify-content: center;
       margin-top: 4px;
     }
-    
     .experience-logo img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
       border-radius: 4px;
     }
-    
-    .experience-content {
-      flex-grow: 1;
-    }
-    
-    .experience-title {
-      font-size: 16px;
-      margin: 0 0 8px 0;
-    }
-    
-    .experience-date {
-      font-size: 14px;
-      color: var(--text-color);
-      margin: 0 0 16px 0;
-    }
-    
-    .experience-projects {
-      font-size: 14px;
-      display: flex;
+    .experience-content { flex-grow: 1; }
+    .experience-title { font-size: 16px; margin: 0 0 8px 0; }
+    .experience-date { font-size: 14px; color: var(--text-color); margin: 0 0 16px 0; }
+    .experience-projects { font-size: 14px; display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+    .tag-outline { border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px; font-size: 13px; }
+
+    /* Ventana Flotante (Modal) */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(15, 15, 15, 0.6);
+      z-index: 1000;
+      justify-content: center;
       align-items: center;
-      gap: 8px;
-      margin-top: 12px;
+      padding: 20px;
+      box-sizing: border-box;
     }
     
-    .tag-outline {
-      border: 1px solid var(--border-color);
-      padding: 2px 8px;
+    .modal-content {
+      background-color: var(--bg-color);
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: rgba(15, 15, 15, 0.1) 0px 4px 12px;
+      overflow-y: auto;
+      padding: 32px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--gray-text);
+      background: none;
+      border: none;
+      padding: 4px 8px;
       border-radius: 4px;
-      font-size: 13px;
+    }
+    
+    .modal-close:hover { background-color: var(--callout-bg); }
+    
+    .modal-placeholder {
+      margin-top: 24px;
+      padding: 40px;
+      border: 2px dashed var(--border-color);
+      border-radius: 8px;
+      text-align: center;
+      color: var(--gray-text);
     }
   </style>
 </head>
 <body>
 
-  <!-- Imagen de portada. Puedes reemplazar la URL por una imagen propia -->
+  <!-- Imagen de portada -->
   <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1200&h=400" alt="Cover" class="notion-cover">
   
   <div class="notion-page">
@@ -177,44 +259,140 @@
     <h2>Sobre Mí</h2>
     <p>Trabajo en la intersección de la acústica arquitectónica, la electrónica a nivel componente y el desarrollo de software. Mi experiencia abarca desde el modelado 3D y la simulación de recintos, hasta la investigación de nuevos materiales acústicos y la calibración precisa de hardware de audio.</p>
     
-    <h2>Proyectos Destacados</h2>
+    <!-- NUEVA SECCIÓN DE PROYECTOS -->
+    <h2>Proyectos</h2>
+
+    <!-- Subsección: Acústica Arquitectónica -->
+    <h3>Acústica Arquitectónica</h3>
     <div class="gallery">
-      <div class="card">
-        <h4>Restauración Sansui AU-417</h4>
-        <p>Reparación a nivel componente de un amplificador vintage. Reemplazo de transistores empleando un SONY K97 en encapsulado DIP-6, recalibración de bias DC y ajuste preciso en el control de ganancia FET (R07).</p>
+      <!-- Tarjeta 1 -->
+      <div class="card" onclick="openModal('Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio')">
+        <img src="portada-gimnasio.jpg" alt="Gimnasio" class="card-cover">
+        <div class="card-title">
+          <span class="card-icon">📐</span>
+          <span>Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio</span>
+        </div>
         <div class="tags">
-          <span class="tag">Hardware</span>
-          <span class="tag">Electrónica Vintage</span>
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">RT60</span>
+          <span class="tag gray">Aurora Acoustical Parameters</span>
+          <span class="tag brown">python</span>
+        </div>
+        <div class="card-desc">
+          <p>Se evaluó el estado del "Antes" y del "Después" centrando el análisis en dos parámetros clave (según norma BS EN ISO 3382-2:2008):</p>
+          <ul>
+            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 1.45 s establecido por la norma DIN 18041:2016 para la categoría "Sport" y para un volumen de 2000 m³, prácticamente en todo el rango de frecuencias de interés.</li>
+            <li><strong>Índice de Definición (D50):</strong> Se consiguió duplicar este valor en el rango de 1.5 kHz a 4 kHz, superando el límite del 50% sugerido por Kuttruff.</li>
+          </ul>
         </div>
       </div>
       
-      <div class="card">
-        <h4>Análisis de Sistema AKAI SW7-II</h4>
-        <p>Diagnóstico avanzado de respuestas de frecuencia. A través de Smaart, se identificó una anomalía a 150Hz que correspondía a una rotación de fase acústica, descartando fallas de naturaleza eléctrica.</p>
+      <!-- Tarjeta 2 -->
+      <div class="card" onclick="openModal('Acondicionamiento acústico de un piso de oficinas')">
+        <img src="portada-oficinas.jpg" alt="Oficinas" class="card-cover">
+        <div class="card-title">
+          <span class="card-icon">📐</span>
+          <span>Acondicionamiento acústico de un piso de oficinas</span>
+        </div>
         <div class="tags">
-          <span class="tag">Smaart V.7</span>
-          <span class="tag">Diagnóstico</span>
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">RT60</span>
+          <span class="tag gray">Aurora Acoustical Parameters</span>
+          <span class="tag brown">python</span>
+        </div>
+        <div class="card-desc">
+          <p>Junto con mi equipo, estuve a cargo del diagnóstico, del diseño y de la instalación de las soluciones acústicas.</p>
+          <p>El objetivo fue aumentar la Inteligibilidad de la Palabra de cinco espacios dentro de un piso de oficinas, disminuyendo sobretodo el Tiempo de Reverberación.</p>
+          <ul>
+            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 0.8 s establecido por el Well Building Standard, prácticamente en todo el rango de frecuencias de interés.</li>
+            <li><strong>Índice de Definición (D50):</strong> Se consiguió aumentar en un 30% este valor en el rango de 250 Hz a 4 kHz, superando el límite sugerido por Kuttruff.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="card">
-        <h4>Modelado Maison Symphonique</h4>
-        <p>Simulación académica de campo acústico en Montreal. Desarrollo del modelo utilizando EASE 4.3.8 y SketchUp para el análisis predictivo del comportamiento espacial del recinto.</p>
-        <div class="tags">
-          <span class="tag">EASE 4.3.8</span>
-          <span class="tag">SketchUp</span>
+      <!-- Tarjeta 3 -->
+      <div class="card" onclick="openModal('Fabricación de paneles acústicos a base de micelio de hongos')">
+        <img src="portada-micelio.jpg" alt="Micelio" class="card-cover">
+        <div class="card-title">
+          <span class="card-icon">🍄</span>
+          <span>Fabricación de paneles acústicos a base de micelio de hongos</span>
         </div>
-      </div>
-      
-      <div class="card">
-        <h4>Consultoría BBVA</h4>
-        <p>Diagnóstico acústico de espacios de oficina. Evaluación in-situ de ruido de piso y pérdida por inserción en divisiones para optimizar la privacidad y la inteligibilidad de la palabra (D50).</p>
         <div class="tags">
-          <span class="tag">Consultoría</span>
-          <span class="tag">Acústica Arquitectónica</span>
+          <span class="tag pink">Biomateriales</span>
+          <span class="tag pink">Acústica Arquitectónica</span>
+        </div>
+        <div class="card-desc">
+          <p><strong>Investigación y selección de sustratos orgánicos:</strong></p>
+          <ul>
+            <li>Caracterización de mezclas utilizando sustratos específicos y de gran accesibilidad local: paja de trigo, algodón y yerba mate.</li>
+          </ul>
+          <p><strong>Equipamiento:</strong></p>
+          <ul>
+            <li>Construcción de incubadora basada en Arduino para el crecimiento y desarrollo del micelio.</li>
+            <li><strong>Validación y ensayos acústicos:</strong> Ensayos con tubos de impedancia para medir y validar las propiedades de absorción acústica de los distintos compuestos de micelio.</li>
+            <li><strong>Implementación:</strong> El enfoque actual está puesto en la validación de los paneles para su uso real en entornos de oficinas, ofreciendo una solución de acondicionamiento sonoro orgánico y sustentable frente a los materiales sintéticos tradicionales.</li>
+          </ul>
         </div>
       </div>
     </div>
+
+    <!-- Subsección: Electroacústica -->
+    <h3>Electroacústica</h3>
+    <div class="gallery">
+      <!-- Tarjeta 4 -->
+      <div class="card" onclick="openModal('Diseño, construcción y medición de un sistema de dos vías coaxial')">
+        <img src="portada-coaxial.jpg" alt="Coaxial" class="card-cover">
+        <div class="card-title">
+          <span class="card-icon">🔊</span>
+          <span>Diseño, construcción y medición de un sistema de dos vías coaxial</span>
+        </div>
+        <div class="tags">
+          <span class="tag pink">Electroacústica</span>
+          <span class="tag pink">Basta!</span>
+          <span class="tag pink">ARTA</span>
+          <span class="tag pink">REW</span>
+          <span class="tag green">Smaart</span>
+          <span class="tag brown">python</span>
+        </div>
+        <div class="card-desc">
+          <ul>
+            <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
+            <li>Simulación del sistema en Basta!</li>
+            <li>Diseño del sistema en CAD.</li>
+            <li>Montaje y construcción en MDF.</li>
+            <li>Medición de la respuesta en frecuencia del sistema con ARTA + python.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="card" onclick="openModal('Diseño, construcción y medición de un sistema de dos vías')">
+        <img src="portada-dosvias.jpg" alt="Dos Vías" class="card-cover">
+        <div class="card-title">
+          <span class="card-icon">🔊</span>
+          <span>Diseño, construcción y medición de un sistema de dos vías</span>
+        </div>
+        <div class="tags">
+          <span class="tag pink">Electroacústica</span>
+          <span class="tag pink">ARTA</span>
+          <span class="tag pink">Basta!</span>
+          <span class="tag pink">REW</span>
+          <span class="tag green">Smaart</span>
+          <span class="tag brown">python</span>
+        </div>
+        <div class="card-desc">
+          <ul>
+            <li>Diseño del sistema electroacústico en CAD.</li>
+            <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
+            <li>Simulación del sistema en Basta!</li>
+            <li>Montaje y construcción en MDF.</li>
+            <li>Medición de la respuesta en frecuencia y de directividad del sistema con ARTA.</li>
+            <li>Diseño del crossover mediante VituixCAD.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- FIN SECCIÓN DE PROYECTOS -->
 
     <h2>Experiencia Profesional</h2>
     
@@ -299,12 +477,42 @@
     </p>
   </div>
 
+  <!-- Contenedor del Modal (Ventana Flotante) -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <h3 id="modal-title">Título del Proyecto</h3>
+      
+      <div class="modal-placeholder">
+        <p><em>Aquí podrás incrustar más adelante galerías de imágenes ampliadas o visores de archivos PDF (.pdf) sobre este proyecto.</em></p>
+        <!-- Ejemplo de cómo se vería un PDF más adelante: -->
+        <!-- <iframe src="tu-archivo.pdf" width="100%" height="500px" style="border: none; margin-top: 20px;"></iframe> -->
+      </div>
+    </div>
+  </div>
+
   <script>
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => {
-        // Lógica para abrir detalles de proyectos
-      });
-    });
+    // Funciones para abrir y cerrar la ventana flotante (Modal)
+    function openModal(projectName) {
+      document.getElementById('modal-title').innerText = projectName;
+      document.getElementById('project-modal').style.display = 'flex';
+      // Bloquear el scroll del fondo
+      document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal() {
+      document.getElementById('project-modal').style.display = 'none';
+      // Restaurar el scroll del fondo
+      document.body.style.overflow = 'auto'; 
+    }
+
+    // Cerrar el modal al hacer clic en el fondo oscuro
+    window.onclick = function(event) {
+      var modal = document.getElementById('project-modal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
   </script>
 </body>
 </html>
