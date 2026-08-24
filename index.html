@@ -47,11 +47,18 @@
       display: block;
     }
 
-    .notion-icon {
-      font-size: 78px;
-      margin-top: -55px;
+    /* Estilos de la Foto de Perfil */
+    .profile-pic {
+      width: 124px;
+      height: 124px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-top: -70px;
       margin-bottom: 20px;
-      display: inline-block;
+      position: relative;
+      background-color: var(--bg-color);
+      box-shadow: 0 0 0 4px var(--bg-color);
+      display: block;
     }
 
     /* Tipografía */
@@ -244,7 +251,9 @@
   <img src="portada.jpeg" alt="Cover" class="notion-cover">
   
   <div class="notion-page">
-    <div class="notion-icon">🎧</div>
+    
+    <!-- Imagen de perfil -->
+    <img src="perfil.jpeg" alt="Pedro Fernandez Ridano" class="profile-pic">
     
     <h1>Pedro Fernandez Ridano</h1>
     <p class="text-gray">Técnico en Electrónica de Audio | Consultor Acústico | Estudiante de Ingeniería de Sonido (UNTREF)</p>
@@ -259,7 +268,6 @@
     <h2>Sobre Mí</h2>
     <p>Trabajo en la intersección de la acústica arquitectónica, la electrónica a nivel componente y el desarrollo de software. Mi experiencia abarca desde el modelado 3D y la simulación de recintos, hasta la investigación de nuevos materiales acústicos y la calibración precisa de hardware de audio.</p>
     
-    <!-- NUEVA SECCIÓN DE PROYECTOS -->
     <h2>Proyectos</h2>
 
     <!-- Subsección: Acústica Arquitectónica -->
@@ -392,7 +400,6 @@
         </div>
       </div>
     </div>
-    <!-- FIN SECCIÓN DE PROYECTOS -->
 
     <h2>Experiencia Profesional</h2>
     
@@ -485,28 +492,22 @@
       
       <div class="modal-placeholder">
         <p><em>Aquí podrás incrustar más adelante galerías de imágenes ampliadas o visores de archivos PDF (.pdf) sobre este proyecto.</em></p>
-        <!-- Ejemplo de cómo se vería un PDF más adelante: -->
-        <!-- <iframe src="tu-archivo.pdf" width="100%" height="500px" style="border: none; margin-top: 20px;"></iframe> -->
       </div>
     </div>
   </div>
 
   <script>
-    // Funciones para abrir y cerrar la ventana flotante (Modal)
     function openModal(projectName) {
       document.getElementById('modal-title').innerText = projectName;
       document.getElementById('project-modal').style.display = 'flex';
-      // Bloquear el scroll del fondo
       document.body.style.overflow = 'hidden'; 
     }
 
     function closeModal() {
       document.getElementById('project-modal').style.display = 'none';
-      // Restaurar el scroll del fondo
       document.body.style.overflow = 'auto'; 
     }
 
-    // Cerrar el modal al hacer clic en el fondo oscuro
     window.onclick = function(event) {
       var modal = document.getElementById('project-modal');
       if (event.target == modal) {
