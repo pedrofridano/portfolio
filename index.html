@@ -33,7 +33,7 @@
       line-height: 1.5;
     }
 
-    /* Estructura principal imitando Notion */
+    /* Estructura principal Notion */
     .notion-page {
       max-width: 900px;
       margin: 0 auto;
@@ -47,7 +47,7 @@
       display: block;
     }
 
-    /* Estilos de la Foto de Perfil */
+    /* Foto de Perfil */
     .profile-pic {
       width: 124px;
       height: 124px;
@@ -82,13 +82,14 @@
     .notion-list { padding-left: 24px; margin: 0 0 12px 0; font-size: 16px;}
     .notion-list li { padding-bottom: 6px; }
 
-    /* Grilla estilo Gallery de Notion para Proyectos */
+    /* Grilla de Tarjetas (Visualización Completa Notion) */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 16px;
       margin-top: 16px;
       margin-bottom: 32px;
+      align-items: start;
     }
 
     .card {
@@ -101,6 +102,7 @@
       flex-direction: column;
       cursor: pointer;
       background: white;
+      height: auto;
     }
 
     .card:hover { 
@@ -122,14 +124,21 @@
 
     .card-title { margin: 0 0 8px 0; font-size: 16px; font-weight: 600; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
     .card-icon { font-size: 18px; line-height: 1.2; flex-shrink: 0; }
-    
-    /* Icono de imagen personalizada en la tarjeta */
     .card-img-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; margin-top: 2px; }
 
-    .card-desc { font-size: 14px; color: var(--text-color); margin-top: 12px; margin-bottom: 12px; flex-grow: 1; }
-    .card-desc ul { padding-left: 20px; margin-top: 8px; margin-bottom: 8px; }
-    .card-desc li { padding-bottom: 4px; }
+    .card-desc { 
+      font-size: 14px; 
+      color: var(--text-color); 
+      margin-top: 12px; 
+      margin-bottom: 12px; 
+      line-height: 1.5;
+    }
     
+    .card-desc p { font-size: 14px; margin-bottom: 8px; }
+    .card-desc ul { padding-left: 20px; margin-top: 6px; margin-bottom: 8px; }
+    .card-desc li { padding-bottom: 4px; font-size: 14px; }
+    
+    /* Tags */
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px;}
     .tag { padding: 2px 6px; border-radius: 4px; font-size: 13px; font-weight: 500; }
     .tag.pink { background-color: var(--tag-pink-bg); color: var(--tag-pink-text); }
@@ -140,7 +149,7 @@
     a { color: inherit; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 4px; }
     a:hover { text-decoration-color: var(--text-color); }
 
-    /* Estilos para la sección de Experiencia */
+    /* Sección Experiencia */
     .experience-item { display: flex; gap: 16px; margin-bottom: 32px; align-items: flex-start; }
     .experience-logo { flex-shrink: 0; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; margin-top: 4px; }
     .experience-logo img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; }
@@ -183,24 +192,9 @@
     }
     .modal-close:hover { background: rgba(0,0,0,0.7); }
     
-    /* Contenido interno del Modal para replicar Notion */
     .modal-cover-img { width: calc(100% + 64px); margin: -32px -32px 0 -32px; height: 240px; object-fit: cover; display: block; border-radius: 8px 8px 0 0; }
-    
-    /* Icono personalizado grande para el Modal */
-    .modal-img-icon-large { 
-      width: 78px; 
-      height: 78px; 
-      object-fit: contain; 
-      margin-top: -45px; 
-      margin-bottom: 16px; 
-      position: relative; 
-      z-index: 1; 
-      background: white; 
-      border-radius: 8px; 
-      padding: 4px; 
-      box-shadow: 0 0 0 2px var(--bg-color); 
-    }
-    
+    .modal-img-icon-large { width: 78px; height: 78px; object-fit: contain; margin-top: -45px; margin-bottom: 16px; position: relative; z-index: 1; background: white; border-radius: 8px; padding: 4px; box-shadow: 0 0 0 2px var(--bg-color); }
+    .modal-icon-large { font-size: 68px; margin-top: -45px; margin-bottom: 16px; position: relative; }
     .modal-project-title { font-size: 36px; font-weight: 700; margin-top: 0; margin-bottom: 24px; line-height: 1.2; letter-spacing: -0.02em; }
     
     .modal-properties { margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
@@ -208,27 +202,10 @@
     .prop-label { width: 100px; color: var(--gray-text); flex-shrink: 0; display: flex; gap: 8px; align-items: center;}
     .prop-value { flex-grow: 1; }
     
-    /* Galería Optimizada del Proyecto */
-    .modal-gallery-grid { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; /* Dos columnas por defecto */
-      gap: 16px; 
-      margin-top: 24px; 
-      align-items: start;
-    }
-    .modal-gallery-grid img { 
-      width: 100%; 
-      height: auto; 
-      border-radius: 6px; 
-      border: 1px solid var(--border-color); 
-      display: block;
-      box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px;
-    }
-    /* Clase para que las imágenes apaisadas ocupen todo el ancho */
-    .img-wide {
-      grid-column: span 2;
-    }
-    /* Adaptación para pantallas de celular */
+    .modal-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; align-items: start; }
+    .modal-gallery-grid img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-color); display: block; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; }
+    .img-wide { grid-column: span 2; }
+    
     @media (max-width: 600px) {
       .modal-gallery-grid { grid-template-columns: 1fr; }
       .img-wide { grid-column: span 1; }
@@ -237,7 +214,6 @@
 </head>
 <body>
 
-  <!-- Portada general de tu portfolio -->
   <img src="portada-portfolio.jpeg" alt="Cover" class="notion-cover">
   
   <div class="notion-page">
@@ -262,7 +238,33 @@
     <!-- Subsección: Acústica Arquitectónica -->
     <h3>Acústica Arquitectónica</h3>
     <div class="gallery">
-      <!-- Tarjeta 1 (Gimnasio) -->
+      
+      <!-- Proyecto Nuevo: El Misilito -->
+      <div class="card" onclick="openModal('misilito')">
+        <img src="portada-elmisilito.jpeg" alt="Control Room El Misilito" class="card-cover">
+        <div class="card-title">
+          <span class="card-icon">🎛️</span>
+          <span>Diagnóstico de control room de estudio El Misilito</span>
+        </div>
+        <div class="tags">
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">Control Room</span>
+          <span class="tag gray">ISO 16283-1</span>
+          <span class="tag gray">Fase Mínima</span>
+          <span class="tag green">DSP</span>
+          <span class="tag brown">python</span>
+        </div>
+        <div class="card-desc">
+          <p>Se realizó el diagnóstico acústico integral del Control Room evaluando respuestas al impulso (RIR) multipunto y barrido continuo:</p>
+          <ul>
+            <li><strong>Distribución Modal:</strong> Detección de resonancia axial crítica en torno a los 84 Hz debida a la geometría casi cuadrada ($3,91 \times 3,96\text{ m}$).</li>
+            <li><strong>Variabilidad Espacial:</strong> Cuantificación mediante descriptores MSV y VSA (70–200 Hz) evidenciando asimetría acústica marcada por la distribución del mobiliario.</li>
+            <li><strong>Fase Mínima y DSP:</strong> Análisis de Exceso de Retardo de Grupo (EGD) para determinar los límites de la ecualización digital frente a reflexiones tempranas de consola y pantalla.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tarjeta Gimnasio -->
       <div class="card" onclick="openModal('gimnasio')">
         <img src="portada.jpeg" alt="Gimnasio" class="card-cover">
         <div class="card-title">
@@ -278,13 +280,13 @@
         <div class="card-desc">
           <p>Se evaluó el estado del "Antes" y del "Después" centrando el análisis en dos parámetros clave (según norma BS EN ISO 3382-2:2008):</p>
           <ul>
-            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo...</li>
-            <li><strong>Índice de Definición (D50):</strong> Se consiguió duplicar este valor...</li>
+            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 1.45 s establecido por la norma DIN 18041:2016 para la categoría "Sport" y para un volumen de 2000 m³, prácticamente en todo el rango de frecuencias de interés.</li>
+            <li><strong>Índice de Definición (D50):</strong> Se consiguió duplicar este valor en el rango de 1.5 kHz a 4 kHz, superando el límite del 50% sugerido por Kuttruff.</li>
           </ul>
         </div>
       </div>
       
-      <!-- Tarjeta 2 -->
+      <!-- Tarjeta Oficinas -->
       <div class="card" onclick="openModal('default', 'Acondicionamiento acústico de un piso de oficinas')">
         <img src="portada-oficinas.jpg" alt="Oficinas" class="card-cover">
         <div class="card-title">
@@ -299,10 +301,15 @@
         </div>
         <div class="card-desc">
           <p>Junto con mi equipo, estuve a cargo del diagnóstico, del diseño y de la instalación de las soluciones acústicas.</p>
+          <p>El objetivo fue aumentar la Inteligibilidad de la Palabra de cinco espacios dentro de un piso de oficinas, disminuyendo sobretodo el Tiempo de Reverberación.</p>
+          <ul>
+            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 0.8 s establecido por el Well Building Standard, prácticamente en todo el rango de frecuencias de interés.</li>
+            <li><strong>Índice de Definición (D50):</strong> Se consiguió aumentar en un 30% este valor en el rango de 250 Hz a 4 kHz, superando el límite sugerido por Kuttruff.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Tarjeta 3 -->
+      <!-- Tarjeta Micelio -->
       <div class="card" onclick="openModal('default', 'Fabricación de paneles acústicos a base de micelio de hongos')">
         <img src="portada-micelio.jpg" alt="Micelio" class="card-cover">
         <div class="card-title">
@@ -314,7 +321,15 @@
           <span class="tag pink">Acústica Arquitectónica</span>
         </div>
         <div class="card-desc">
-          <p>Investigación y selección de sustratos orgánicos para paneles sustentables.</p>
+          <p><strong>Investigación y selección de sustratos orgánicos:</strong></p>
+          <ul>
+            <li>Caracterización de mezclas utilizando sustratos específicos y de gran accesibilidad local: paja de trigo, algodón y yerba mate.</li>
+          </ul>
+          <p><strong>Equipamiento y Ensayos:</strong></p>
+          <ul>
+            <li>Construcción de incubadora basada en Arduino para el crecimiento y desarrollo del micelio.</li>
+            <li>Ensayos con tubos de impedancia para medir y validar las propiedades de absorción acústica de los compuestos.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -322,7 +337,7 @@
     <!-- Subsección: Electroacústica -->
     <h3>Electroacústica</h3>
     <div class="gallery">
-      <!-- Tarjeta 4 -->
+      <!-- Tarjeta Coaxial -->
       <div class="card" onclick="openModal('default', 'Diseño, construcción y medición de un sistema de dos vías coaxial')">
         <img src="portada-coaxial.jpg" alt="Coaxial" class="card-cover">
         <div class="card-title">
@@ -331,14 +346,24 @@
         </div>
         <div class="tags">
           <span class="tag pink">Electroacústica</span>
+          <span class="tag pink">Basta!</span>
+          <span class="tag pink">ARTA</span>
+          <span class="tag pink">REW</span>
           <span class="tag green">Smaart</span>
+          <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <ul><li>Diseño del sistema en CAD y montaje en MDF.</li></ul>
+          <ul>
+            <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
+            <li>Simulación del sistema en Basta!</li>
+            <li>Diseño del sistema en CAD.</li>
+            <li>Montaje y construcción en MDF.</li>
+            <li>Medición de la respuesta en frecuencia del sistema con ARTA + python.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Tarjeta 5 -->
+      <!-- Tarjeta Dos Vías -->
       <div class="card" onclick="openModal('default', 'Diseño, construcción y medición de un sistema de dos vías')">
         <img src="portada-dosvias.jpg" alt="Dos Vías" class="card-cover">
         <div class="card-title">
@@ -347,10 +372,21 @@
         </div>
         <div class="tags">
           <span class="tag pink">Electroacústica</span>
+          <span class="tag pink">ARTA</span>
+          <span class="tag pink">Basta!</span>
+          <span class="tag pink">REW</span>
+          <span class="tag green">Smaart</span>
           <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <ul><li>Diseño de crossover mediante VituixCAD.</li></ul>
+          <ul>
+            <li>Diseño del sistema electroacústico en CAD.</li>
+            <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
+            <li>Simulación del sistema en Basta!</li>
+            <li>Montaje y construcción en MDF.</li>
+            <li>Medición de la respuesta en frecuencia y directividad con ARTA.</li>
+            <li>Diseño del crossover mediante VituixCAD.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -414,9 +450,53 @@
     </p>
   </div>
 
-  <!-- Contenedores Ocultos con los datos de los Modales -->
+  <!-- Modales Ocultos -->
+
+  <!-- Modal: El Misilito -->
+  <div id="content-misilito" style="display: none;">
+    <img src="portada-elmisilito.jpeg" class="modal-cover-img" alt="Portada El Misilito">
+    <div class="modal-icon-large">🎛️</div>
+    <h2 class="modal-project-title">Diagnóstico de control room de estudio El Misilito</h2>
+    
+    <div class="modal-properties">
+      <div class="prop-row">
+        <div class="prop-label">Fecha</div>
+        <div class="prop-value">Julio 2026</div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-label">Tags</div>
+        <div class="prop-value">
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">Control Room</span>
+          <span class="tag gray">ISO 16283-1</span>
+          <span class="tag gray">Fase Mínima</span>
+          <span class="tag green">DSP</span>
+          <span class="tag brown">python</span>
+        </div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-label">Objetivo</div>
+        <div class="prop-value">Evaluar la fidelidad del sistema de monitoreo y sala, diagnosticar anomalías modales e interferencias por reflexiones tempranas, y proponer un plan de acción acústico y correctivo.</div>
+      </div>
+    </div>
+
+    <h3>Diagnóstico y Análisis Realizado</h3>
+    <ul class="notion-list">
+      <li><strong>Asimetría Acústica:</strong> Disparidad entre monitores L y R debido al mobiliario asimétrico (rack con superficies reflectantes en L vs. estuches absorbentes en R).</li>
+      <li><strong>Respuesta Modal Inestable:</strong> Modos axiales acoplados en torno a 84 Hz generados por las dimensiones cuasi-cuadradas del recinto ($3,91 \times 3,96\text{ m}$). El Sweet Spot se ubica en un nodo de presión (-7.8 dB).</li>
+      <li><strong>Interferencia por Reflexiones Tempranas:</strong> Cancelación por filtro peine en torno a los 630 Hz provocada por el monitor de video central ($d \approx 14\text{ cm} \approx \lambda/4$).</li>
+      <li><strong>Evaluación de Fase Mínima:</strong> El análisis del Exceso de Retardo de Grupo (EGD) evidenció comportamiento de fase no mínima en frecuencias medias, limitando el uso de ecualización digital (DSP) por riesgo de introducir pre-ringing.</li>
+    </ul>
+
+    <h3>Plan de Acción Propuesto</h3>
+    <ul class="notion-list">
+      <li><strong>Fase 1 (Reacondicionamiento Geométrico):</strong> Reorganización y despeje lateral para recuperar simetría acústica, y reubicación de la pantalla central.</li>
+      <li><strong>Fase 2 (Tratamiento Pasivo):</strong> Instalación de trampas de graves (Bass Traps) de banda ancha en esquinas y nube acústica en techo.</li>
+      <li><strong>Fase 3 (Corrección Digital):</strong> Filtros paramétricos guiados por la curva Harman aplicados conservadoramente solo en zonas de fase mínima verificadas.</li>
+    </ul>
+  </div>
   
-  <!-- Contenido Proyecto Gimnasio -->
+  <!-- Modal: Gimnasio -->
   <div id="content-gimnasio" style="display: none;">
     <img src="portada.jpeg" class="modal-cover-img" alt="Portada Gimnasio">
     <img src="newconceptco-logo2.png" alt="Icono" class="modal-img-icon-large">
@@ -451,32 +531,27 @@
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
     <div class="modal-gallery-grid">
-      <!-- Imágenes verticales comparten renglón -->
       <img src="meg1.jpeg" alt="Medición 1">
       <img src="meg6.jpeg" alt="Medición 2">
-      <!-- Imágenes horizontales de fotos ocupan todo el ancho -->
       <img src="meg4.jpeg" alt="Hall Antes y Después" class="img-wide">
       <img src="meg5.jpeg" alt="Lateral Antes y Después" class="img-wide">
-      <!-- Gráficos sin clase 'img-wide' para que ocupen media fila cada uno -->
       <img src="meg2.jpeg" alt="Curva RT60">
       <img src="meg3.jpeg" alt="Curva D50">
     </div>
   </div>
 
-  <!-- Contenido Default para otros proyectos en construcción -->
+  <!-- Modal Default -->
   <div id="content-default" style="display: none;">
     <div style="margin-top: 40px; text-align: center; color: var(--gray-text); padding: 40px; border: 2px dashed var(--border-color); border-radius: 8px;">
       <p><em>La galería y los detalles de este proyecto se están cargando...</em></p>
     </div>
   </div>
 
-  <!-- Contenedor del Modal (Ventana Flotante) -->
+  <!-- Modal Container -->
   <div id="project-modal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">×</button>
-      <div id="modal-body-content">
-        <!-- El contenido se inyecta aquí con JS -->
-      </div>
+      <div id="modal-body-content"></div>
     </div>
   </div>
 
@@ -485,7 +560,7 @@
       var contentSource = document.getElementById('content-' + projectId);
       var modalBody = document.getElementById('modal-body-content');
       
-      if (projectId === 'gimnasio') {
+      if (contentSource) {
         modalBody.innerHTML = contentSource.innerHTML;
       } else {
         var defaultSource = document.getElementById('content-default');
