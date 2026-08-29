@@ -227,8 +227,8 @@
 </head>
 <body>
 
-  <!-- Asegúrate de que esta extensión (.jpeg o .jpg) coincida exactamente con tu archivo en GitHub -->
-  <img src="portada-portfolio.jpeg" alt="Cover" class="notion-cover">
+  <!-- Imagen corregida a .jpg -->
+  <img src="portada-portfolio.jpg" alt="Cover" class="notion-cover">
   
   <div class="notion-page">
     
@@ -252,11 +252,11 @@
     <h3>Acústica Arquitectónica</h3>
     <div class="gallery">
       
-      <!-- Proyecto Nuevo: El Misilito -->
+      <!-- Proyecto: El Misilito -->
       <div class="card" onclick="openModal('misilito')">
         <img src="portada-elmisilito.jpeg" alt="Control Room El Misilito" class="card-cover">
         <div class="card-title">
-          <span class="card-icon">🎛️</span>
+          <img src="simbolo-misilito.png" alt="Icono" class="card-img-icon">
           <span>Diagnóstico de control room de estudio El Misilito</span>
         </div>
         <div class="tags">
@@ -300,10 +300,10 @@
       </div>
       
       <!-- Tarjeta Oficinas -->
-      <div class="card" onclick="openModal('default', 'Acondicionamiento acústico de un piso de oficinas')">
-        <img src="portada-oficinas.jpg" alt="Oficinas" class="card-cover">
+      <div class="card" onclick="openModal('oficinas')">
+        <img src="sala reuniones.png" alt="Oficinas" class="card-cover">
         <div class="card-title">
-          <span class="card-icon">📐</span>
+          <img src="arquinec_logo.jpg" alt="Icono" class="card-img-icon">
           <span>Acondicionamiento acústico de un piso de oficinas</span>
         </div>
         <div class="tags">
@@ -468,7 +468,7 @@
   <!-- Modal: El Misilito -->
   <div id="content-misilito" style="display: none;">
     <img src="portada-elmisilito.jpeg" class="modal-cover-img" alt="Portada El Misilito">
-    <div class="modal-icon-large">🎛️</div>
+    <img src="simbolo-misilito.png" alt="Icono" class="modal-img-icon-large">
     <h2 class="modal-project-title">Diagnóstico de control room de estudio El Misilito</h2>
     
     <div class="modal-properties">
@@ -550,6 +550,43 @@
       <img src="meg5.jpeg" alt="Lateral Antes y Después" class="img-wide">
       <img src="meg2.jpeg" alt="Curva RT60">
       <img src="meg3.jpeg" alt="Curva D50">
+    </div>
+  </div>
+
+  <!-- Modal: Oficinas -->
+  <div id="content-oficinas" style="display: none;">
+    <img src="sala reuniones.png" class="modal-cover-img" alt="Portada Oficinas">
+    <img src="arquinec_logo.jpg" alt="Icono" class="modal-img-icon-large">
+    <h2 class="modal-project-title">Acondicionamiento acústico de un piso de oficinas</h2>
+    
+    <div class="modal-properties">
+      <div class="prop-row">
+        <div class="prop-label">Tags</div>
+        <div class="prop-value">
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">RT60</span>
+          <span class="tag gray">Aurora Acoustical Parameters</span>
+          <span class="tag brown">python</span>
+        </div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-label">Objetivo</div>
+        <div class="prop-value">Aumentar la Inteligibilidad de la Palabra de cinco espacios dentro de un piso de oficinas, disminuyendo sobretodo el Tiempo de Reverberación.</div>
+      </div>
+    </div>
+
+    <h3>Lo que se hizo</h3>
+    <p>Junto con mi equipo, estuve a cargo del diagnóstico, del diseño y de la instalación de las soluciones acústicas.</p>
+    <ul class="notion-list">
+      <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 0.8 s establecido por el Well Building Standard, prácticamente en todo el rango de frecuencias de interés.</li>
+      <li><strong>Índice de Definición (D50):</strong> Se consiguió aumentar en un 30% este valor en el rango de 250 Hz a 4 kHz, superando el límite sugerido por Kuttruff.</li>
+    </ul>
+
+    <h3>Galería de imágenes y curvas del proyecto</h3>
+    <div class="modal-gallery-grid">
+      <img src="hall_fig3(1).jpg" alt="Hall" class="img-wide">
+      <img src="box_fig(2).jpg" alt="Boxes" class="img-wide">
+      <img src="salac_fig(1).jpg" alt="Sala de reuniones" class="img-wide">
     </div>
   </div>
 
