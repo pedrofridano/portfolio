@@ -224,7 +224,7 @@
       display: block;
       box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px;
     }
-    /* Clase para que las imágenes apaisadas ocupen todo el ancho y no queden pequeñas */
+    /* Clase para que las imágenes apaisadas ocupen todo el ancho */
     .img-wide {
       grid-column: span 2;
     }
@@ -264,7 +264,7 @@
     <div class="gallery">
       <!-- Tarjeta 1 (Gimnasio) -->
       <div class="card" onclick="openModal('gimnasio')">
-        <img src="portada-gimnasio.jpg" alt="Gimnasio" class="card-cover">
+        <img src="portada.jpeg" alt="Gimnasio" class="card-cover">
         <div class="card-title">
           <img src="newconceptco-logo2.png" alt="Icono" class="card-img-icon">
           <span>Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio</span>
@@ -454,11 +454,12 @@
       <!-- Imágenes verticales comparten renglón -->
       <img src="meg1.jpeg" alt="Medición 1">
       <img src="meg6.jpeg" alt="Medición 2">
-      <!-- Imágenes horizontales ocupan todo el ancho con la clase 'img-wide' -->
+      <!-- Imágenes horizontales de fotos ocupan todo el ancho -->
       <img src="meg4.jpeg" alt="Hall Antes y Después" class="img-wide">
       <img src="meg5.jpeg" alt="Lateral Antes y Después" class="img-wide">
-      <img src="meg2.jpeg" alt="Curva RT60" class="img-wide">
-      <img src="meg3.jpeg" alt="Curva D50" class="img-wide">
+      <!-- Gráficos sin clase 'img-wide' para que ocupen media fila cada uno -->
+      <img src="meg2.jpeg" alt="Curva RT60">
+      <img src="meg3.jpeg" alt="Curva D50">
     </div>
   </div>
 
