@@ -120,8 +120,12 @@
       background-color: var(--border-color);
     }
 
-    .card-title { margin: 0 0 8px 0; font-size: 16px; font-weight: 600; display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
+    .card-title { margin: 0 0 8px 0; font-size: 16px; font-weight: 600; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
     .card-icon { font-size: 18px; line-height: 1.2; flex-shrink: 0; }
+    
+    /* Icono de imagen personalizada en la tarjeta */
+    .card-img-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; margin-top: 2px; }
+
     .card-desc { font-size: 14px; color: var(--text-color); margin-top: 12px; margin-bottom: 12px; flex-grow: 1; }
     .card-desc ul { padding-left: 20px; margin-top: 8px; margin-bottom: 8px; }
     .card-desc li { padding-bottom: 4px; }
@@ -181,12 +185,27 @@
     
     /* Contenido interno del Modal para replicar Notion */
     .modal-cover-img { width: calc(100% + 64px); margin: -32px -32px 0 -32px; height: 240px; object-fit: cover; display: block; border-radius: 8px 8px 0 0; }
-    .modal-icon-large { font-size: 68px; margin-top: -45px; margin-bottom: 16px; position: relative; }
+    
+    /* Icono personalizado grande para el Modal */
+    .modal-img-icon-large { 
+      width: 78px; 
+      height: 78px; 
+      object-fit: contain; 
+      margin-top: -45px; 
+      margin-bottom: 16px; 
+      position: relative; 
+      z-index: 1; 
+      background: white; 
+      border-radius: 8px; 
+      padding: 4px; 
+      box-shadow: 0 0 0 2px var(--bg-color); 
+    }
+    
     .modal-project-title { font-size: 36px; font-weight: 700; margin-top: 0; margin-bottom: 24px; line-height: 1.2; letter-spacing: -0.02em; }
     
     .modal-properties { margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
     .prop-row { display: flex; margin-bottom: 12px; font-size: 14px; align-items: flex-start; }
-    .prop-label { width: 140px; color: var(--gray-text); flex-shrink: 0; display: flex; gap: 8px; align-items: center;}
+    .prop-label { width: 100px; color: var(--gray-text); flex-shrink: 0; display: flex; gap: 8px; align-items: center;}
     .prop-value { flex-grow: 1; }
     
     .modal-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
@@ -195,7 +214,8 @@
 </head>
 <body>
 
-  <img src="portada.jpeg" alt="Cover" class="notion-cover">
+  <!-- Portada general renombrada para evitar conflictos -->
+  <img src="portada-portfolio.jpeg" alt="Cover" class="notion-cover">
   
   <div class="notion-page">
     
@@ -223,7 +243,7 @@
       <div class="card" onclick="openModal('gimnasio')">
         <img src="portada-gimnasio.jpg" alt="Gimnasio" class="card-cover">
         <div class="card-title">
-          <span class="card-icon">📐</span>
+          <img src="newconceptco-logo2.png" alt="Icono" class="card-img-icon">
           <span>Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio</span>
         </div>
         <div class="tags">
@@ -376,16 +396,16 @@
   <!-- Contenido Proyecto Gimnasio -->
   <div id="content-gimnasio" style="display: none;">
     <img src="portada.jpeg" class="modal-cover-img" alt="Portada Gimnasio">
-    <div class="modal-icon-large">📐</div>
+    <img src="newconceptco-logo2.png" alt="Icono" class="modal-img-icon-large">
     <h2 class="modal-project-title">Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio</h2>
     
     <div class="modal-properties">
       <div class="prop-row">
-        <div class="prop-label">📅 Fecha</div>
-        <div class="prop-value">February 19, 2026 → March 25, 2026</div>
+        <div class="prop-label">Fecha</div>
+        <div class="prop-value">19 de febrero de 2026 → 25 de marzo de 2026</div>
       </div>
       <div class="prop-row">
-        <div class="prop-label">🏷️ Tags</div>
+        <div class="prop-label">Tags</div>
         <div class="prop-value">
           <span class="tag pink">Acústica Arquitectónica</span>
           <span class="tag pink">RT60</span>
@@ -394,7 +414,7 @@
         </div>
       </div>
       <div class="prop-row">
-        <div class="prop-label">🎯 Objetivo</div>
+        <div class="prop-label">Objetivo</div>
         <div class="prop-value">Medir y analizar el impacto de la instalación de paneles acústicos PET por parte de la empresa New Concept Co.</div>
       </div>
     </div>
