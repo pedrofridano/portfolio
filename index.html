@@ -86,6 +86,7 @@
       display: flex;
       gap: 12px;
       align-items: center;
+      margin-top: 8px; /* Desplaza los íconos hacia abajo para alinearlos con la base del nombre */
     }
 
     .social-links a {
@@ -252,7 +253,8 @@
     @media (max-width: 600px) {
       .header-wrapper { flex-direction: column; gap: 8px; align-items: center; text-align: center; }
       .header-text { padding-top: 0; display: flex; flex-direction: column; align-items: center;}
-      .title-and-socials { flex-direction: column; gap: 12px; }
+      .title-and-socials { flex-direction: column; gap: 12px; margin-bottom: 12px; }
+      .social-links { margin-top: 0; }
       .modal-gallery-grid { grid-template-columns: 1fr; }
       .img-wide { grid-column: span 1; }
     }
