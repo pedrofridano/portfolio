@@ -247,7 +247,19 @@
     .prop-value { flex-grow: 1; }
     
     .modal-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; align-items: start; }
-    .modal-gallery-grid img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-color); display: block; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; }
+    .modal-gallery-grid img { 
+      width: 100%; 
+      height: auto; 
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 6px; 
+      border: 1px solid var(--border-color); 
+      display: block; 
+      box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; 
+      background-color: var(--tag-gray-bg);
+      color: var(--gray-text);
+      font-size: 14px;
+    }
     .img-wide { grid-column: span 2; }
     
     @media (max-width: 600px) {
@@ -592,9 +604,9 @@
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
     <div class="modal-gallery-grid">
-      <img src="hall.jpg" alt="Hall" class="img-wide">
-      <img src="boxes.jpg" alt="Boxes" class="img-wide">
-      <img src="salareuniones.jpg" alt="Sala de reuniones" class="img-wide">
+      <img src="hall.png" alt="Hall" class="img-wide">
+      <img src="boxes.png" alt="Boxes" class="img-wide">
+      <img src="salareuniones.png" alt="Sala de reuniones" class="img-wide">
     </div>
   </div>
 
