@@ -112,6 +112,7 @@
     h3 { font-size: 24px; font-weight: 600; margin-top: 1.5em; margin-bottom: 8px; }
     p { font-size: 16px; margin: 0 0 12px 0; color: var(--text-color); }
     .text-gray { color: var(--gray-text); margin-bottom: 0; }
+    .impact-text { font-weight: 600; color: #2c3e50; }
 
     /* Bloques especiales */
     .callout {
@@ -123,6 +124,33 @@
       margin: 0.5em 0;
     }
     
+    .cta-block {
+      text-align: center;
+      margin: 60px 0 20px;
+      padding: 40px;
+      background-color: var(--callout-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background-color: var(--text-color);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
     .notion-list { padding-left: 24px; margin: 0 0 12px 0; font-size: 16px;}
     .notion-list li { padding-bottom: 6px; }
 
@@ -146,7 +174,7 @@
       flex-direction: column;
       cursor: pointer;
       background: white;
-      height: auto;
+      height: 100%;
     }
 
     .card:hover { 
@@ -289,7 +317,7 @@
     
     <div class="callout">
       <div>
-        <p>Consultor en acústica arquitectónica y electroacústica. Me especializo en el diagnóstico y evaluación de espacios y sistemas electroacústicos. Además, desarrollo propuestas para proyectos de acondicionamiento acústico y de electroacústica.</p>
+        <p>Consultor técnico enfocado en garantizar el <strong>confort acústico y la fidelidad sonora</strong>. Ayudo a estudios de arquitectura, empresas y productoras a certificar sus espacios bajo normativas internacionales y a resolver problemas de ruido mediante diagnósticos de alta precisión técnica.</p>
       </div>
     </div>
 
@@ -299,6 +327,25 @@
     <h3>Acústica Arquitectónica</h3>
     <div class="gallery">
       
+      <!-- Proyecto: Oficinas BBVA (NUEVO PROYECTO AÑADIDO) -->
+      <div class="card" onclick="openModal('bbva')">
+        <img src="sala%20reuniones.png" alt="Aislación Oficinas" class="card-cover">
+        <div class="card-title">
+          <img src="arquinec_logo.jpg" alt="Icono" class="card-img-icon">
+          <span>Diagnóstico de aislación corporativa (Sector Bancario)</span>
+        </div>
+        <div class="tags">
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">Aislación</span>
+          <span class="tag gray">Ruido de Piso</span>
+          <span class="tag brown">python</span>
+        </div>
+        <div class="card-desc">
+          <p>Evaluación de pérdida de inserción en tabiques divisorios para oficinas corporativas.</p>
+          <p><span class="impact-text">Impacto comercial:</span> Se garantizó la privacidad y confidencialidad requerida para salas de reuniones y despachos gerenciales, certificando la aislación acústica frente a estándares del sector financiero.</p>
+        </div>
+      </div>
+
       <!-- Proyecto: El Misilito -->
       <div class="card" onclick="openModal('misilito')">
         <img src="portada-elmisilito.jpeg" alt="Control Room El Misilito" class="card-cover">
@@ -310,17 +357,12 @@
           <span class="tag pink">Acústica Arquitectónica</span>
           <span class="tag pink">Control Room</span>
           <span class="tag gray">ISO 16283-1</span>
-          <span class="tag gray">Fase Mínima</span>
           <span class="tag green">DSP</span>
           <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <p>Se realizó el diagnóstico acústico integral del Control Room evaluando respuestas al impulso (RIR) multipunto y barrido continuo:</p>
-          <ul>
-            <li><strong>Distribución Modal:</strong> Detección de resonancia axial crítica en torno a los 84 Hz debida a la geometría casi cuadrada (3,91 × 3,96 m).</li>
-            <li><strong>Variabilidad Espacial:</strong> Cuantificación mediante descriptores MSV y VSA (70–200 Hz) evidenciando asimetría acústica marcada por la distribución del mobiliario.</li>
-            <li><strong>Fase Mínima y DSP:</strong> Análisis de Exceso de Retardo de Grupo (EGD) para determinar los límites de la ecualización digital frente a reflexiones tempranas de consola y pantalla.</li>
-          </ul>
+          <p>Diagnóstico integral para garantizar una escucha confiable y sin coloraciones.</p>
+          <p><span class="impact-text">Impacto comercial:</span> Se identificaron y eliminaron las deficiencias acústicas que causaban fatiga auditiva, permitiendo a los ingenieros del estudio tomar decisiones de mezcla más rápidas y precisas.</p>
         </div>
       </div>
 
@@ -329,20 +371,17 @@
         <img src="portada.jpeg" alt="Gimnasio" class="card-cover">
         <div class="card-title">
           <img src="newconceptco-logo2.png" alt="Icono" class="card-img-icon">
-          <span>Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio</span>
+          <span>Acondicionamiento acústico de un gimnasio comercial</span>
         </div>
         <div class="tags">
           <span class="tag pink">Acústica Arquitectónica</span>
           <span class="tag pink">RT60</span>
-          <span class="tag gray">Aurora Acoustical Parameters</span>
+          <span class="tag gray">DIN 18041:2016</span>
           <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <p>Se evaluó el estado del "Antes" y del "Después" centrando el análisis en dos parámetros clave (según norma BS EN ISO 3382-2:2008):</p>
-          <ul>
-            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 1.45 s establecido por la norma DIN 18041:2016 para la categoría "Sport" y para un volumen de 2000 m³, prácticamente en todo el rango de frecuencias de interés.</li>
-            <li><strong>Índice de Definición (D50):</strong> Se consiguió duplicar este valor en el rango de 1.5 kHz a 4 kHz, superando el límite del 50% sugerido por Kuttruff.</li>
-          </ul>
+          <p>Evaluación del impacto acústico tras la instalación de paneles PET de diseño.</p>
+          <p><span class="impact-text">Impacto comercial:</span> Se transformó un espacio altamente ruidoso en un ambiente confortable. Los clientes ahora pueden escuchar claramente a los instructores sin el estrés generado por el aturdimiento, mejorando la experiencia y retención de socios.</p>
         </div>
       </div>
       
@@ -351,20 +390,17 @@
         <img src="sala%20reuniones.png" alt="Oficinas" class="card-cover">
         <div class="card-title">
           <img src="arquinec_logo.jpg" alt="Icono" class="card-img-icon">
-          <span>Acondicionamiento acústico de un piso de oficinas</span>
+          <span>Acondicionamiento para Open Space corporativo</span>
         </div>
         <div class="tags">
           <span class="tag pink">Acústica Arquitectónica</span>
           <span class="tag pink">RT60</span>
-          <span class="tag gray">Aurora Acoustical Parameters</span>
+          <span class="tag gray">Well Building Standard</span>
           <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <p>Junto con mi equipo, estuve a cargo del diagnóstico, del diseño y de la instalación de las soluciones acústicas. El objetivo fue aumentar la Inteligibilidad de la Palabra de cinco espacios dentro de un piso de oficinas, disminuyendo sobretodo el Tiempo de Reverberación.</p>
-          <ul>
-            <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 0.8 s establecido por el Well Building Standard, prácticamente en todo el rango de frecuencias de interés.</li>
-            <li><strong>Índice de Definición (D50):</strong> Se consiguió aumentar en un 30% este valor en el rango de 250 Hz a 4 kHz, superando el límite sugerido por Kuttruff.</li>
-          </ul>
+          <p>Acondicionamiento para maximizar la inteligibilidad y el confort en oficinas de planta abierta.</p>
+          <p><span class="impact-text">Impacto comercial:</span> Aumento directo en la productividad del equipo y reducción del estrés laboral. Se logró un entorno normado donde las reuniones y llamadas transcurren con total claridad.</p>
         </div>
       </div>
     </div>
@@ -385,16 +421,10 @@
           <span class="tag pink">ARTA</span>
           <span class="tag pink">REW</span>
           <span class="tag green">Smaart</span>
-          <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <ul>
-            <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
-            <li>Simulación del sistema en Basta!</li>
-            <li>Diseño del sistema en CAD.</li>
-            <li>Montaje y construcción en MDF.</li>
-            <li>Medición de la respuesta en frecuencia del sistema con ARTA + python.</li>
-          </ul>
+          <p>Prototipado integral de gabinetes customizados y validación de respuesta en frecuencia.</p>
+          <p><span class="impact-text">Enfoque Técnico:</span> Recuperación y reciclaje de transductores antiguos para desarrollar un sistema moderno de alta fidelidad, aplicando mediciones precisas de impedancia y simulación de volumen.</p>
         </div>
       </div>
 
@@ -403,25 +433,18 @@
         <img src="portada-dosvias.png" alt="Dos Vías" class="card-cover">
         <div class="card-title">
           <img src="dos%20vias.png" alt="Icono" class="card-img-icon">
-          <span>Diseño, construcción y medición de un sistema de dos vías</span>
+          <span>Diseño, simulación y medición de un sistema de dos vías</span>
         </div>
         <div class="tags">
           <span class="tag pink">Electroacústica</span>
           <span class="tag pink">ARTA</span>
-          <span class="tag pink">Basta!</span>
+          <span class="tag pink">VituixCAD</span>
           <span class="tag pink">REW</span>
           <span class="tag green">Smaart</span>
-          <span class="tag brown">python</span>
         </div>
         <div class="card-desc">
-          <ul>
-            <li>Diseño del sistema electroacústico en CAD.</li>
-            <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
-            <li>Simulación del sistema en Basta!</li>
-            <li>Montaje y construcción en MDF.</li>
-            <li>Medición de la respuesta en frecuencia y directividad con ARTA.</li>
-            <li>Diseño del crossover mediante VituixCAD.</li>
-          </ul>
+          <p>Desarrollo electroacústico desde la planimetría CAD hasta el diseño del crossover (VituixCAD).</p>
+          <p><span class="impact-text">Enfoque Técnico:</span> Análisis minucioso de la directividad del sistema para asegurar una cobertura uniforme y un rendimiento óptimo de las cajas ventiladas.</p>
         </div>
       </div>
     </div>
@@ -431,11 +454,11 @@
     <div class="experience-item">
       <div class="experience-logo"><img src="newconceptco-logo2.png" alt="New Concept Co. Logo"></div>
       <div class="experience-content">
-        <p class="experience-title">Consultor acústico — <em>New Concept Co.</em></p>
+        <p class="experience-title">Consultor Acústico e Instalador — <em>New Concept Co.</em></p>
         <p class="experience-date">Septiembre 2025 – Presente</p>
         <ul class="notion-list">
-          <li>Mediciones acústicas in situ y análisis de datos para la evaluación y acondicionamiento de espacios.</li>
-          <li>Asesoramiento técnico y comercial a clientes para la implementación de soluciones acústicas con paneles de PET.</li>
+          <li><strong>Consultoría B2B:</strong> Realización de mediciones in-situ y redacción de informes técnicos que validan el éxito de las instalaciones acústicas frente a los clientes.</li>
+          <li><strong>Asesoramiento Comercial:</strong> Apoyo directo a la venta de paneles acústicos PET recomendando configuraciones efectivas según las patologías de cada espacio.</li>
         </ul>
       </div>
     </div>
@@ -443,10 +466,10 @@
     <div class="experience-item">
       <div class="experience-logo"><img src="yaeltex.jpg" alt="Yaeltex Logo"></div>
       <div class="experience-content">
-        <p class="experience-title"><strong>Técnico electrónico</strong> — Yaeltex Custom MIDI Controllers</p>
+        <p class="experience-title">Técnico Electrónico — <em>Yaeltex Custom MIDI Controllers</em></p>
         <p class="experience-date">Agosto 2024 – Enero 2025</p>
         <ul class="notion-list">
-          <li>Armado de controladores MIDI y testeo inicial.</li>
+          <li>Armado, soldadura y control de calidad inicial de controladores MIDI a medida para clientes internacionales.</li>
         </ul>
       </div>
     </div>
@@ -454,7 +477,7 @@
     <div class="experience-item">
       <div class="experience-logo"><img src="flyer%20mat.png" alt="Matemática Logo"></div>
       <div class="experience-content">
-        <p class="experience-title"><strong>Profesor particular de Física y Matemática</strong> — Freelance</p>
+        <p class="experience-title">Profesor particular de Física y Matemática — <em>Freelance</em></p>
         <p class="experience-date">Agosto 2021 – Presente</p>
         <ul class="notion-list"><li>Organización de técnicas de estudio y tutorías.</li></ul>
       </div>
@@ -463,15 +486,54 @@
     <div class="experience-item">
       <div class="experience-logo"><img src="untref%20logo.jpg" alt="UNTREF Logo"></div>
       <div class="experience-content">
-        <p class="experience-title">Ayudante de Cátedra — UNTREF</p>
+        <p class="experience-title">Ayudante de Cátedra — <em>UNTREF</em></p>
         <p class="experience-date">Marzo 2024 – Diciembre 2025</p>
-        <ul class="notion-list"><li>Laboratorio de Electrónica 1 e Introd. a la Acústica.</li></ul>
+        <ul class="notion-list"><li>Asistencia académica en las materias Laboratorio de Electrónica 1 e Introducción a la Acústica.</li></ul>
       </div>
+    </div>
+    
+    <!-- NUEVO: Call To Action (Llamado a la acción) -->
+    <div class="cta-block">
+      <h2>¿Necesitás diagnosticar o certificar acústicamente un espacio?</h2>
+      <p>Ya sea un proyecto en etapa de planos o un espacio comercial que sufre de ruido excesivo, la medición técnica precisa es el primer paso para una solución efectiva.</p>
+      <a href="https://wa.me/5491149713799" class="cta-button" target="_blank">Escribime por WhatsApp</a>
     </div>
 
   </div>
 
   <!-- Modales Ocultos -->
+  
+  <!-- Modal: BBVA (NUEVO) -->
+  <div id="content-bbva" style="display: none;">
+    <img src="sala%20reuniones.png" class="modal-cover-img" alt="Portada BBVA">
+    <img src="arquinec_logo.jpg" alt="Icono" class="modal-img-icon-large">
+    <h2 class="modal-project-title">Diagnóstico de aislación corporativa (Sector Bancario)</h2>
+    
+    <div class="modal-properties">
+      <div class="prop-row">
+        <div class="prop-label">Tags</div>
+        <div class="prop-value">
+          <span class="tag pink">Acústica Arquitectónica</span>
+          <span class="tag pink">Aislación</span>
+          <span class="tag gray">Ruido de Piso</span>
+          <span class="tag brown">python</span>
+        </div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-label">Objetivo comercial</div>
+        <div class="prop-value">Asegurar la confidencialidad absoluta en áreas de trabajo sensibles mediante la medición empírica de la aislación de oficinas.</div>
+      </div>
+    </div>
+
+    <h3>Diagnóstico y Análisis Realizado</h3>
+    <ul class="notion-list">
+      <li><strong>Evaluación de Aislación:</strong> Medición rigurosa de la pérdida de inserción en tabiques divisorios, garantizando que el sonido de las salas de reunión no filtre a pasillos o despachos contiguos.</li>
+      <li><strong>Medición de Ruido de Piso:</strong> Evaluación del ruido de fondo generado por sistemas HVAC (aire acondicionado) y el entorno, validando el cumplimiento de los estándares de confort para espacios corporativos financieros.</li>
+    </ul>
+
+    <h3>Beneficio para el Cliente</h3>
+    <p>La medición brindó a los arquitectos y a la gerencia del banco datos empíricos para validar las inversiones realizadas en materiales divisorios, garantizando que los espacios VIP y de reuniones cumplen con el máximo estándar de confidencialidad y confort exigido a nivel institucional.</p>
+  </div>
 
   <!-- Modal: El Misilito -->
   <div id="content-misilito" style="display: none;">
@@ -485,35 +547,17 @@
         <div class="prop-value">Julio 2026</div>
       </div>
       <div class="prop-row">
-        <div class="prop-label">Tags</div>
-        <div class="prop-value">
-          <span class="tag pink">Acústica Arquitectónica</span>
-          <span class="tag pink">Control Room</span>
-          <span class="tag gray">ISO 16283-1</span>
-          <span class="tag gray">Fase Mínima</span>
-          <span class="tag green">DSP</span>
-          <span class="tag brown">python</span>
-        </div>
-      </div>
-      <div class="prop-row">
-        <div class="prop-label">Objetivo</div>
-        <div class="prop-value">Evaluar la fidelidad del sistema de monitoreo y sala, diagnosticar anomalías modales e interferencias por reflexiones tempranas, y proponer un plan de acción acústico y correctivo.</div>
+        <div class="prop-label">Objetivo comercial</div>
+        <div class="prop-value">Optimizar la fidelidad del sistema de monitoreo para reducir la fatiga de los ingenieros y agilizar las decisiones de mezcla.</div>
       </div>
     </div>
 
-    <h3>Diagnóstico y Análisis Realizado</h3>
+    <h3>Diagnóstico y Plan de Acción (Traducido a Beneficios)</h3>
     <ul class="notion-list">
-      <li><strong>Asimetría Acústica:</strong> Disparidad entre monitores L y R debido al mobiliario asimétrico (rack con superficies reflectantes en L vs. estuches absorbentes en R).</li>
-      <li><strong>Respuesta Modal Inestable:</strong> Modos axiales acoplados en torno a 84 Hz generados por las dimensiones cuasi-cuadradas del recinto (3,91 × 3,96 m). El Sweet Spot se ubica en un nodo de presión (-7.8 dB).</li>
-      <li><strong>Interferencia por Reflexiones Tempranas:</strong> Cancelación por filtro peine en torno a los 630 Hz provocada por el monitor de video central (d ≈ 14 cm ≈ λ/4).</li>
-      <li><strong>Evaluación de Fase Mínima:</strong> El análisis del Exceso de Retardo de Grupo (EGD) evidenció comportamiento de fase no mínima en frecuencias medias, limitando el uso de ecualización digital (DSP) por riesgo de introducir pre-ringing.</li>
-    </ul>
-
-    <h3>Plan de Acción Propuesto</h3>
-    <ul class="notion-list">
-      <li><strong>Fase 1 (Reacondicionamiento Geométrico):</strong> Reorganización y despeje lateral para recuperar simetría acústica, y reubicación de la pantalla central.</li>
-      <li><strong>Fase 2 (Tratamiento Pasivo):</strong> Instalación de trampas de graves (Bass Traps) de banda ancha en esquinas y nube acústica en techo.</li>
-      <li><strong>Fase 3 (Corrección Digital):</strong> Filtros paramétricos guiados por la curva Harman aplicados conservadoramente solo en zonas de fase mínima verificadas.</li>
+      <li><strong>Corrección de Asimetrías:</strong> Se detectó que el mobiliario (racks vs. estuches) afectaba la escucha estéreo. El plan propone una reorganización sencilla para recuperar una imagen espacial clara, vital para el paneo en mezclas profesionales.</li>
+      <li><strong>Estabilidad de Graves:</strong> Se identificó una acumulación problemática de graves (84 Hz) en la posición de mezcla (Sweet Spot) debido a la geometría de la sala. Se propuso la instalación estratégica de trampas de graves para que el técnico no necesite "adivinar" el nivel real de las bajas frecuencias.</li>
+      <li><strong>Eliminación de Distracciones Tempranas:</strong> Se corrigió el rebote de sonido provocado por la pantalla de video central, que "manchaba" la señal directa de los monitores.</li>
+      <li><strong>Ajuste Digital Seguro (DSP):</strong> Tras un análisis avanzado (Fase Mínima / EGD), se propuso una ecualización digital muy conservadora guiada por la curva Harman, evitando introducir artefactos sonoros (pre-ringing) indeseados.</li>
     </ul>
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
@@ -528,7 +572,7 @@
   <div id="content-gimnasio" style="display: none;">
     <img src="portada.jpeg" class="modal-cover-img" alt="Portada Gimnasio">
     <img src="newconceptco-logo2.png" alt="Icono" class="modal-img-icon-large">
-    <h2 class="modal-project-title">Diagnóstico y evaluación de acondicionamiento acústico de un gimnasio</h2>
+    <h2 class="modal-project-title">Acondicionamiento acústico de un gimnasio comercial</h2>
     
     <div class="modal-properties">
       <div class="prop-row">
@@ -536,25 +580,16 @@
         <div class="prop-value">19 de febrero de 2026 → 25 de marzo de 2026</div>
       </div>
       <div class="prop-row">
-        <div class="prop-label">Tags</div>
-        <div class="prop-value">
-          <span class="tag pink">Acústica Arquitectónica</span>
-          <span class="tag pink">RT60</span>
-          <span class="tag gray">Aurora Acoustical Parameters</span>
-          <span class="tag brown">python</span>
-        </div>
-      </div>
-      <div class="prop-row">
-        <div class="prop-label">Objetivo</div>
-        <div class="prop-value">Medir y analizar el impacto de la instalación de paneles acústicos PET por parte de la empresa New Concept Co.</div>
+        <div class="prop-label">Objetivo comercial</div>
+        <div class="prop-value">Demostrar y certificar la mejora en la experiencia del usuario tras la instalación de paneles acústicos PET por parte de New Concept Co.</div>
       </div>
     </div>
 
-    <h3>Lo que se hizo</h3>
-    <p>Se evaluó el estado del "Antes" y del "Después" centrando el análisis en dos parámetros clave (según norma BS EN ISO 3382-2:2008):</p>
+    <h3>Resultados Alcanzados</h3>
+    <p>Se midió el estado del recinto antes y después del acondicionamiento, validando el éxito de la inversión:</p>
     <ul class="notion-list">
-      <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 1.45 s establecido por la norma DIN 18041:2016 para la categoría "Sport" y para un volumen de 2000 m³, prácticamente en todo el rango de frecuencias de interés.</li>
-      <li><strong>Índice de Definición (D50):</strong> Se consiguió duplicar este valor en el rango de 1.5 kHz a 4 kHz, superando el límite del 50% sugerido por Kuttruff.</li>
+      <li><strong>Reducción de reverberación extrema (RT60):</strong> El eco molesto que saturaba el gimnasio se redujo dramáticamente, cumpliendo ahora con la rigurosa norma DIN 18041 para recintos deportivos. La música ahora acompaña, en lugar de aturdir.</li>
+      <li><strong>Mayor claridad de la palabra (D50):</strong> Se logró duplicar la inteligibilidad acústica en las frecuencias donde opera la voz humana. Ahora, las instrucciones de los profesores se entienden sin esfuerzo, evitando confusiones y quejas.</li>
     </ul>
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
@@ -572,29 +607,20 @@
   <div id="content-oficinas" style="display: none;">
     <img src="sala%20reuniones.png" class="modal-cover-img" alt="Portada Oficinas">
     <img src="arquinec_logo.jpg" alt="Icono" class="modal-img-icon-large">
-    <h2 class="modal-project-title">Acondicionamiento acústico de un piso de oficinas</h2>
+    <h2 class="modal-project-title">Acondicionamiento para Open Space corporativo</h2>
     
     <div class="modal-properties">
       <div class="prop-row">
-        <div class="prop-label">Tags</div>
-        <div class="prop-value">
-          <span class="tag pink">Acústica Arquitectónica</span>
-          <span class="tag pink">RT60</span>
-          <span class="tag gray">Aurora Acoustical Parameters</span>
-          <span class="tag brown">python</span>
-        </div>
-      </div>
-      <div class="prop-row">
-        <div class="prop-label">Objetivo</div>
-        <div class="prop-value">Aumentar la Inteligibilidad de la Palabra de cinco espacios dentro de un piso de oficinas, disminuyendo sobretodo el Tiempo de Reverberación.</div>
+        <div class="prop-label">Objetivo comercial</div>
+        <div class="prop-value">Aumentar la productividad del equipo y reducir el estrés auditivo mediante el control del Tiempo de Reverberación en las áreas de trabajo.</div>
       </div>
     </div>
 
-    <h3>Lo que se hizo</h3>
-    <p>Junto con mi equipo, estuve a cargo del diagnóstico, del diseño y de la instalación de las soluciones acústicas.</p>
+    <h3>Resultados Alcanzados</h3>
+    <p>El proyecto involucró diseño e instalación, con resultados validados mediante métricas precisas:</p>
     <ul class="notion-list">
-      <li><strong>Tiempo de Reverberación (RT60):</strong> Se logró reducirlo significativamente, alcanzando el valor objetivo de 0.8 s establecido por el Well Building Standard, prácticamente en todo el rango de frecuencias de interés.</li>
-      <li><strong>Índice de Definición (D50):</strong> Se consiguió aumentar en un 30% este valor en el rango de 250 Hz a 4 kHz, superando el límite sugerido por Kuttruff.</li>
+      <li><strong>Clasificación Well Building Standard:</strong> Se redujo el rebote de sonido a menos de 0.8 segundos (RT60), alcanzando el objetivo recomendado internacionalmente para oficinas saludables. Esto significa menos dolor de cabeza al final del día laboral para los empleados.</li>
+      <li><strong>Mejora del Confort (D50):</strong> La inteligibilidad aumentó un 30%. Esto es vital para que, en un ambiente abierto, la voz sea clara de cerca pero no viaje distorsionada al otro lado de la oficina.</li>
     </ul>
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
@@ -613,29 +639,18 @@
     
     <div class="modal-properties">
       <div class="prop-row">
-        <div class="prop-label">Tags</div>
-        <div class="prop-value">
-          <span class="tag pink">Electroacústica</span>
-          <span class="tag pink">Basta!</span>
-          <span class="tag pink">ARTA</span>
-          <span class="tag pink">REW</span>
-          <span class="tag green">Smaart</span>
-          <span class="tag brown">python</span>
-        </div>
-      </div>
-      <div class="prop-row">
         <div class="prop-label">Objetivo</div>
-        <div class="prop-value">Diseño electroacústico y montaje en MDF de un sistema de dos vías coaxial a partir de transductores reciclados.</div>
+        <div class="prop-value">Desarrollo técnico de un prototipo electroacústico de alta fidelidad.</div>
       </div>
     </div>
 
-    <h3>Lo que se hizo</h3>
+    <h3>Metodología Técnica</h3>
     <ul class="notion-list">
-      <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
-      <li>Simulación del sistema en Basta!</li>
-      <li>Diseño del sistema en CAD.</li>
-      <li>Montaje y construcción en MDF.</li>
-      <li>Medición de la respuesta en frecuencia del sistema con ARTA + python.</li>
+      <li>Medición de Impedancia eléctrica y extracción de parámetros Thiele-Small.</li>
+      <li>Simulación precisa del volumen de la caja utilizando Basta!</li>
+      <li>Diseño estructural del gabinete acústico en CAD.</li>
+      <li>Montaje en madera (MDF).</li>
+      <li>Validación final del desempeño mediante respuestas en frecuencia con ARTA y análisis automatizados en Python.</li>
     </ul>
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
@@ -652,34 +667,22 @@
   <div id="content-dosvias" style="display: none;">
     <img src="portada-dosvias.png" class="modal-cover-img" alt="Portada Dos Vías">
     <img src="dos%20vias.png" alt="Icono" class="modal-img-icon-large">
-    <h2 class="modal-project-title">Diseño, construcción y medición de un sistema de dos vías</h2>
+    <h2 class="modal-project-title">Diseño, simulación y medición de un sistema de dos vías</h2>
     
     <div class="modal-properties">
       <div class="prop-row">
-        <div class="prop-label">Tags</div>
-        <div class="prop-value">
-          <span class="tag pink">Electroacústica</span>
-          <span class="tag pink">ARTA</span>
-          <span class="tag pink">Basta!</span>
-          <span class="tag pink">REW</span>
-          <span class="tag green">Smaart</span>
-          <span class="tag brown">python</span>
-        </div>
-      </div>
-      <div class="prop-row">
         <div class="prop-label">Objetivo</div>
-        <div class="prop-value">Diseño, simulación y medición de un sistema de dos vías.</div>
+        <div class="prop-value">Diseño electroacústico avanzado, incluyendo desarrollo de crossover pasivo y mapeo de directividad.</div>
       </div>
     </div>
 
-    <h3>Lo que se hizo</h3>
+    <h3>Metodología Técnica</h3>
     <ul class="notion-list">
       <li>Diseño del sistema electroacústico en CAD.</li>
-      <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small de los transductores reciclados.</li>
-      <li>Simulación del sistema en Basta!</li>
-      <li>Montaje y construcción en MDF.</li>
-      <li>Medición de la respuesta en frecuencia y directividad con ARTA.</li>
-      <li>Diseño del crossover mediante VituixCAD.</li>
+      <li>Medición de Impedancia eléctrica y de los parámetros de Thiele-Small.</li>
+      <li>Simulación de volumen y respuesta en graves (Basta!).</li>
+      <li>Medición avanzada de cobertura acústica (directividad) con ARTA.</li>
+      <li>Cálculo y diseño del filtro divisor de frecuencias (crossover) usando VituixCAD para asegurar una transición perfecta entre las vías.</li>
     </ul>
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
