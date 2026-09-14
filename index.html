@@ -298,17 +298,33 @@
     .prop-label { width: 100px; color: var(--gray-text); flex-shrink: 0; display: flex; gap: 8px; align-items: center;}
     .prop-value { flex-grow: 1; }
     
-    .modal-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; align-items: start; }
-    .modal-gallery-grid img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-color); display: block; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; }
-    .img-wide { grid-column: span 2; }
+    /* Configuración tipo Masonry para galerías integradas */
+    .modal-gallery-grid { 
+      column-count: 2; 
+      column-gap: 16px; 
+      margin-top: 24px; 
+    }
+    .modal-gallery-grid img { 
+      width: 100%; 
+      height: auto; 
+      border-radius: 6px; 
+      border: 1px solid var(--border-color); 
+      display: block; 
+      box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px;
+      margin-bottom: 16px; 
+      break-inside: avoid;
+    }
+    .img-wide { 
+      column-span: all; 
+      width: 100%; 
+    }
     
     @media (max-width: 768px) {
       .header-wrapper { flex-direction: column; gap: 8px; align-items: center; text-align: center; }
       .header-text { padding-top: 0; display: flex; flex-direction: column; align-items: center;}
       .title-and-socials { flex-direction: column; gap: 12px; margin-bottom: 12px; }
       .social-links { margin-top: 0; }
-      .modal-gallery-grid { grid-template-columns: 1fr; }
-      .img-wide { grid-column: span 1; }
+      .modal-gallery-grid { column-count: 1; }
       
       .modal-nav { width: 40px; height: 40px; font-size: 20px; }
       .prev-btn { left: 4px; }
@@ -359,7 +375,7 @@
       
       <!-- Proyecto: Oficinas BBVA -->
       <div class="card" onclick="openModal('bbva')">
-        <img src="sala008.jpg" alt="Aislación Oficinas" class="card-cover">
+        <img src="sala008_2_brighter.jpg" alt="Aislación Oficinas" class="card-cover">
         <div class="card-title">
           <img src="newconceptco-logo2.png" alt="Icono" class="card-img-icon">
           <span>Diagnóstico y evaluación de acústica corporativa</span>
@@ -531,7 +547,7 @@
   
   <!-- Modal: BBVA -->
   <div id="content-bbva" style="display: none;">
-    <img src="sala008.jpg" class="modal-cover-img" alt="Portada BBVA">
+    <img src="sala008_2_brighter.jpg" class="modal-cover-img" alt="Portada BBVA">
     <img src="newconceptco-logo2.png" alt="Icono" class="modal-img-icon-large">
     <h2 class="modal-project-title">Diagnóstico y evaluación de acústica corporativa</h2>
     
@@ -566,7 +582,7 @@
       <img src="image_beec04.png" alt="Aislamiento Acústico In-Situ (DnT)" class="img-wide">
       <img src="image_beef80.png" alt="Tiempo de Reverberación Sala 018" class="img-wide">
       <img src="image_bef6e3.png" alt="Comparativa Tiempo de Reverberación Sala 002" class="img-wide">
-      <img src="sala008.jpg" alt="Sala 008">
+      <img src="sala008_2_brighter.jpg" alt="Sala 008">
       <img src="sala%20007.jpg" alt="Sala 007">
       <img src="sala_002_1.jpg" alt="Sala 002">
     </div>
@@ -665,10 +681,10 @@
     </ul>
 
     <h3>Galería de imágenes y curvas del proyecto</h3>
-    <div class="modal-gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-      <img src="hall.png" alt="Hall">
-      <img src="boxes.png" alt="Boxes">
-      <img src="salareuniones.png" alt="Sala de reuniones">
+    <div class="modal-gallery-grid">
+      <img src="hall.png" alt="Hall" class="img-wide">
+      <img src="boxes.png" alt="Boxes" class="img-wide">
+      <img src="salareuniones.png" alt="Sala de reuniones" class="img-wide">
     </div>
   </div>
 
